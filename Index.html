@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Easebuy Shopping</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Easebuy Shopping</h1>
+      <nav>
+        <ul class="flex space-x-2">
+          <li><a href="index.html" class="hover:underline font-bold">Home</a></li>
+          <li><a href="Contact-us.html" class="hover:underline">Contact us</a></li>
+          <li><a href="Cart.html" class="hover:underline">Cart<span id="cart-count" class="ml-1 bg-red-600 text-white text-xs font-semibold px-2 py-0.5 rounded-full">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-white py-12 shadow-md">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Welcome to Easebuy</h2>
+      <p class="text-gray-600">Your one-stop shop for electronics, clothes, provisions, accessories, and more.</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="container mx-auto px-4 py-12">
+    <h3 class="text-2xl font-bold mb-6 text-center">Shop by Category</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <a href="category-electronics.html" class="block bg-white rounded-2xl shadow-md p-6 text-center hover:bg-blue-50 transition">
+        <h4 class="text-lg font-semibold text-blue-600">📱 Electronics</h4>
+      </a>
+      <a href="Clothes.html" class="block bg-white rounded-2xl shadow-md p-6 text-center hover:bg-pink-50 transition">
+        <h4 class="text-lg font-semibold text-pink-600">👗 Fashions</h4>
+      </a>
+      <a href="Provisions.html" class="block bg-white rounded-2xl shadow-md p-6 text-center hover:bg-yellow-50 transition">
+        <h4 class="text-lg font-semibold text-yellow-600">🛒 Provisions</h4>
+      </a>
+      <a href="Accessories.html" class="block bg-white rounded-2xl shadow-md p-6 text-center hover:bg-green-50 transition">
+        <h4 class="text-lg font-semibold text-green-600">🎧 Accessories</h4>
+      </a>
+      <a href="Restaurant.html" class="block bg-white rounded-2xl shadow-md p-6 text-center hover:bg-red-50 transition">
+        <h4 class="text-lg font-semibold text-red-600">🍽️ Restaurant</h4>
+      </a>
+      <a href="Appliances.html" class="block bg-white rounded-2xl shadow-md p-6 text-center hover:bg-purple-50 transition">
+        <h4 class="text-lg font-semibold text-purple-600">🏠 Appliances</h4>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="container mx-auto px-4 py-12">
+    <h3 class="text-2xl font-bold mb-6 text-center">Featured Products</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="electronics/saiba.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Saiba</h4>
+        <p class="text-gray-500">null</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="electronics/es.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Esther</h4>
+        <p class="text-gray-500">100 Cows</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      <!-- Product 1 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/sample-phone.jpg" alt="Phone" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Tecno Spark 5</h4>
+        <p class="text-gray-500">₵1200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Tecno Spark 5', 1200, 'images/sample-phone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/rice.jpg" alt="Rice" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Royal Aroma Rice 5kg</h4>
+        <p class="text-gray-500">₵100</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Royal Aroma Rice 5kg', 100, 'images/rice.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/fridge.jpg" alt="Fridge" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Nasco Fridge 200L</h4>
+        <p class="text-gray-500">₵2200</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Nasco Fridge 200L', 2200, 'images/fridge.jpg')">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <img src="images/jollof.jpg" alt="Jollof" class="w-full h-40 object-cover rounded mb-2">
+        <h4 class="font-semibold text-lg">Jollof Rice (1 pack)</h4>
+        <p class="text-gray-500">₵25</p>
+        <button
+          class="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 w-full"
+          onclick="addToCart('Jollof Rice (1 pack)', 25, 'images/jollof.jpg')">
+          Add to Cart
+        </button>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Offline Payment Info -->
+  <section class="bg-yellow-100 py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-yellow-800 font-semibold">We accept offline payment. Place your order and pay on delivery!</p>
+       <div class="my-6">
+      <h2 class="text-xl font-bold text-gray-700 mb-2">Order Today & Pay on Delivery</h2>
+      <p class="text-sm text-gray-500">Fast delivery | Easy returns | Quality guaranteed</p>
+    </div>
+
+    <div class="bg-blue-100 rounded-xl p-4 mt-6">
+      <h3 class="font-bold text-gray-700 mb-2">Contact Us</h3>
+      <p class="text-sm"><i class="fas fa-envelope text-blue-500 mr-2"></i>easebuy500@gmail.com</p>
+      <p class="text-sm"><i class="fas fa-phone text-green-600 mr-2"></i>+233 55 499 5469</p>
+      <div class="flex justify-center mt-3 space-x-4 text-xl">
+        <a href="https://wa.me/233554995469" target="_blank" class="text-green-500 hover:text-green-600"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com/easebuyshop" target="_blank" class="text-blue-700 hover:text-blue-800"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+      
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Easebuy Shopping. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('easebuy-cart')) || [];
+      const count = cart.reduce((acc, item) => acc + item.qty, 0);
+      const counter = document.getElementById('cart-count');
+      if (counter) counter.textContent = count;
+    }
+
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('easebuy-cart')) || [];
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, image, qty: 1 });
+      }
+      localStorage.setItem('easebuy-cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(`${name} added to cart!`);
+    }
+
+    // Call on load
+    updateCartCount();
+  </script>
+</body>
+</html>
